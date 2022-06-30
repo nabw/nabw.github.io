@@ -4,15 +4,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="simple.css">
     <title>Document</title>
   </head>
+  <header>
+	  <h1> La cuenta regresiva </h1>
+  </header>
   <body>
+        <p> 
+    <img src="bono.jpeg" class="bono">
+    &nbsp;	
+    &nbsp;	
+    &nbsp;	
+    <img src="bona.jpeg" class="bona">
+    </p>
+
     <div id="counter">
       <span id="days"></span> días, <span id="hours"></span> horas,
       <span id="minutes"></span> minutos
     </div>
 
-    <h1 id="dani-back" class="hide">DANI IS BACK</h1>
+
   </body>
 
   <style>
@@ -38,7 +50,7 @@
       const secondsElement = document.getElementById('seconds')
 
       // TODO: FOR NICHOLAS: Fill in some date
-      const daniBackDate = new Date('2022-09-29')
+      const daniBackDate = new Date('2022-11-01')
 
       const interval = setInterval(() => {
         const now = new Date()
