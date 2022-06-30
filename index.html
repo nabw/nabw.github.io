@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="counter">
+      <span id="days"></span> : <span id="hours"></span> :
+      <span id="minutes"></span> :
+      <span id="seconds"></span>
+    </div>
+
+    <h1 id="dani-back" class="hide">DANI IS BACK</h1>
+  </body>
+
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+
+  <script>
+    function formatNumber(nr) {
+      return nr > 9 ? nr : `0${nr}`
+    }
+
+    function getDifferenceInDays(startDate, endDate) {
+      const differenceInMs = Math.abs(endDate - startDate)
+      return Math.ceil(differenceInMs / (1000 * 60 * 60 * 24)) - 1
+    }
+
+    function showCountdown() {
+      const daysElement = document.getElementById('days')
+      const hoursElement = document.getElementById('hours')
+      const minutesElement = document.getElementById('minutes')
+      const secondsElement = document.getElementById('seconds')
+
+      // TODO: FOR NICHOLAS: Fill in some date
+      const daniBackDate = new Date('2022-09-29')
+
+      const interval = setInterval(() => {
+        const now = new Date()
+        const hours = 23 - now.getHours()
+        const minutes = 59 - now.getMinutes()
+        const seconds = 60 - now.getSeconds()
+
+        daysElement.innerText = formatNumber(
+          getDifferenceInDays(now, daniBackDate),
+        )
+
+        // Put days, hours, minutes and seconds in the HTML elements
+        hoursElement.innerText = formatNumber(hours)
+        minutesElement.innerText = formatNumber(minutes)
+        secondsElement.innerText = formatNumber(seconds)
+
+        // If the day Dani is back is reached, don't show the counter anymore
+        // instead, show the 'Dani is back message'
+        if (daniBackDate <= now) {
+          clearInterval(interval)
+          document.getElementById('dani-back').classList.remove('hide')
+          document.getElementById('counter').classList.add('hide')
+        }
+      }, 1000)
+    }
+    window.onload = showCountdown
+  </script>
+</html>
