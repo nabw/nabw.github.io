@@ -65,7 +65,7 @@ body > header {
   background: var(--accent-bg);
   border-bottom: 1px solid var(--border);
   text-align: center;
-  padding: 0 0.5rem 2rem 0.5rem;
+  padding: 0 0.5rem 0rem 0.5rem;
   grid-column: 1 / -1;
   box-sizing: border-box;
 }
@@ -81,9 +81,10 @@ body > header p {
 }
 
 /* Add a little padding to ensure spacing is correct between content and header > nav */
-main {
+/*main {
   padding-top: 1.5rem;
 }
+*/
 
 body > footer {
   margin-top: 4rem;
@@ -568,13 +569,31 @@ label {
 #counter {
   font-size: 2rem;
   font-weight: bold;
+  color: gray;
 }
 
 .bono {
-  width:20rem;
-  border-radius: 8px;
+  height:20rem;
+  border-radius: 18px;
+  border-style: solid;
+  border-color: var(--border);
+  float: left;
 }
 .bona {
-  width:20rem;
-  border-radius: 8px;
+  height:20rem;
+  border-radius: 18px;
+  border-style: solid;
+  border-color: var(--border);
+  float: right;
 }
+
+.texto {
+  text-align: justify;
+  color: var(--text);
+}
+
+.firma {
+  text-align: right;
+  color: var(--text-light);
+}
+
