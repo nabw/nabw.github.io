@@ -573,14 +573,14 @@ label {
 }
 
 .bono {
-  height:20rem;
+  height:10rem;
   border-radius: 18px;
   border-style: solid;
   border-color: var(--border);
   float: left;
 }
 .bona {
-  height:20rem;
+  height:10rem;
   border-radius: 18px;
   border-style: solid;
   border-color: var(--border);
